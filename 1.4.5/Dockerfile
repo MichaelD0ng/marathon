@@ -12,4 +12,3 @@ RUN mkdir -p /export/app \
     && rm -rvf marathon-1.4.5.tgz
 
 ENTRYPOINT ["/export/app/marathon-1.4.5/bin/start"]
-

@@ -1,7 +1,7 @@
-#marathon 1.4.5
+marathon 1.4.5
 ---
 
-### ENTRYPOINT: /export/app/marathon-1.4.5/bin/start
+## ENTRYPOINT: /export/app/marathon-1.4.5/bin/start
 
-####eg: docker run --net host -it registry.vrviu.com:5000/marathon:latest --master zk://10.86.0.106:2181/mesos --zk zk://10.86.0.106:2181/marathon --hostname 10.86.0.107
+###eg: docker run --net host -it vrviumichael/marathon:latest --master zk://10.86.0.106:2181/mesos --zk zk://10.86.0.106:2181/marathon --hostname 10.86.0.107
 
