@@ -1,9 +1,4 @@
-From vrviumichael/ubuntu:16.04
-MAINTAINER Michael Dong <michael.dong@vrviu.com>
-
-ENV ZK_MASTER zk://127.0.0.1:2181/mesos \
-    ZK_MARATHON zk://127.0.0.1:2181/marathon \
-    MARATHON_HN 127.0.0.1
+FROM registry.vrviu.com:5000/ubuntu:latest
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF \
     && echo "deb http://repos.mesosphere.com/ubuntu xenial main" | tee /etc/apt/sources.list.d/mesosphere.list \
@@ -16,8 +11,5 @@ RUN mkdir -p /export/app \
     && tar xvf marathon-1.4.5.tgz \
     && rm -rvf marathon-1.4.5.tgz
 
-COPY docker-entrypoint.sh /
+ENTRYPOINT ["/export/app/marathon-1.4.5/bin/start"]
 
-RUN chmod 777 /docker-entrypoint.sh
-
-ENTRYPOINT ["/docker-entrypoint.sh"]
